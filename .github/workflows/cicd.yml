@@ -39,4 +39,4 @@ jobs:
 
     # Step 6: Success message
     - name: Pipeline Success
-      run: echo "CI/CD pipeline executed successfully 🚀"
+      run: echo "CI/CD pipeline executed successfully "
