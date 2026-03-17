@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprint Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Agile Sprint Dashboard 🚀</h1>
+
+    <!-- Add Task -->
+    <div class="input-section">
+        <input type="text" id="taskInput" placeholder="Enter task..." />
+        <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <!-- Board -->
+    <div class="board">
+
+        <div class="column">
+            <h2>To Do</h2>
+            <div id="todo"></div>
+        </div>
+
+        <div class="column">
+            <h2>In Progress</h2>
+            <div id="progress"></div>
+        </div>
+
+        <div class="column">
+            <h2>Done</h2>
+            <div id="done"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

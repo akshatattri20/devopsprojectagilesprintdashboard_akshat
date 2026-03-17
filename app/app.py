@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # In-memory database (simple for project)
 tasks = []
@@ -35,6 +37,16 @@ def add_task():
 
     return jsonify(task), 201
 
+@app.route('/tasks/<int:task_id>', methods=['DELETE'])
+def delete_task(task_id):
+    global tasks
+
+    for task in tasks:
+        if task["id"] == task_id:
+            tasks.remove(task)
+            return jsonify({"message": "Task deleted"})
+
+    return jsonify({"error": "Task not found"}), 404
 
 # Update task status
 @app.route('/tasks/<int:task_id>', methods=['PUT'])
